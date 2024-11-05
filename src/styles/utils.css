@@ -56,3 +56,21 @@ h5,
 h6 {
   font-family: 'Pattaya';
 }
+
+.custom-button {
+  @apply relative z-10 overflow-hidden flex items-center gap-2 rounded-full bg-woodland text-white px-12 text-xl shadow-xl leading-10;
+}
+
+ .custom-button:before {
+  @apply absolute block bg-black bottom-0 left-0 w-full;
+  transition: all .3s ease;
+  z-index: -1;
+  content: "";
+  height: 0;
+
+ }
+
+ .custom-button:hover:before {
+  background-color: red;
+  height: 4rem;
+ }

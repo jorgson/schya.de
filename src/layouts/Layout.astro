@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 import "../styles/utils.css";
 
 interface Props {
@@ -29,7 +30,9 @@ const {
 ---
 
 <!doctype html>
-<html lang="de">
+<html
+  lang="de"
+  class="text-sm md:text-base">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -108,6 +111,15 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <a
+      class="-z-50 absolute top-0 left-0 opacity-0"
+      href="#main"
+      aria-label="zum Hauptinhalt"
+      >Klicken um zum Hauptinhalt zu kommen</a
+    >
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
   </body>
 </html>

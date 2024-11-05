@@ -1,0 +1,51 @@
+---
+import { Picture } from "astro:assets";
+
+import LOGO from "../assets/logo.png";
+import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
+---
+
+<header class="fixed top-0 z-50 w-full">
+  <div
+    class="relative w-full flex mr-auto justify-between items-center h-14 container mx-auto px-4">
+    <a
+      class="flex gap-2 leading-none items-center"
+      href="/"
+      aria-label="zurück zur Startseite">
+      <Picture
+        src={LOGO}
+        alt="SCHYA Traditionelle Thai Massage"
+        formats={["webp, avif"]}
+        width={48}
+      />
+    </a>
+
+    <nav
+      class="hidden md:flex"
+      role="navigation">
+      <ul class="flex gap-4">
+        <li class="font-bold text-xl hover:text-woodland transition-colors">
+          <a href="">Massagen</a>
+        </li>
+        <li class="font-bold text-xl hover:text-woodland transition-colors">
+          <a href="">Preise</a>
+        </li>
+        <li class="font-bold text-xl hover:text-woodland transition-colors">
+          <a href="">Gutschein</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="">
+      <a
+        href="https://wa.me/+4915128928966"
+        class="custom-button"
+        ><Picture
+          src={WHATSAPP}
+          alt="Whatsapp Termin vereinbaren"
+          width={20}
+        />Termin vereinbaren</a
+      >
+    </div>
+  </div>
+</header>
