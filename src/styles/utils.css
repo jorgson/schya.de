@@ -79,3 +79,28 @@ html {
  .custom-button:hover:before {
   height: 4rem;
  }
+
+
+ .card picture {
+  transition: all .4s ease-in-out;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+ }
+
+ .card picture::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+ }
+
+.card:hover picture {
+  width: 120%;
+}

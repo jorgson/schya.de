@@ -1,10 +1,10 @@
 ---
-import Picture from "astro/components/Picture.astro";
+import { Picture } from "astro:assets";
 import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
 import MASSAGE from "../assets/katherine-hanlon-mod2s3-qFOc-unsplash.jpg";
 ---
 
-<section class="bg-light-green pt-32 min-h-screen">
+<section class="bg-light-green pt-32 pb-80 relative">
   <div
     class="container mx-auto flex flex-col items-center xl:flex-row gap-36 px-4 xl:px-[4%]">
     <div
@@ -28,17 +28,29 @@ import MASSAGE from "../assets/katherine-hanlon-mod2s3-qFOc-unsplash.jpg";
           src={WHATSAPP}
           alt="Whatsapp Termin vereinbaren"
           width={20}
+          loading={"eager"}
         /><span class="relative bottom-[2px]">Termin vereinbaren</span></a
       >
     </div>
     <div class="relative xl:w-[55vw]">
       <Picture
-        class=""
+        class="rounded-3xl"
         src={MASSAGE}
         alt="Massage"
         width={786}
         formats={["webp, avif"]}
+        loading={"eager"}
       />
     </div>
   </div>
+  <svg
+    viewBox="0 0 1440 320"
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute -bottom-[2px]">
+    <path
+      fill="#f3f4f6"
+      fill-opacity="1"
+      d="M0,256L48,229.3C96,203,192,149,288,138.7C384,128,480,160,576,181.3C672,203,768,213,864,224C960,235,1056,245,1152,245.3C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+    ></path>
+  </svg>
 </section>
