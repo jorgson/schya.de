@@ -1,0 +1,44 @@
+---
+import Picture from "astro/components/Picture.astro";
+import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
+import MASSAGE from "../assets/katherine-hanlon-mod2s3-qFOc-unsplash.jpg";
+---
+
+<section class="bg-light-green pt-32 min-h-screen">
+  <div
+    class="container mx-auto flex flex-col items-center xl:flex-row gap-36 px-4 xl:px-[4%]">
+    <div
+      class="mx-auto flex flex-col xl:block items-center xl:ml-auto xl:max-w-[45vw] w-full">
+      <h1
+        class="text-center xl:text-left text-4xl tracking-normal font-extrabold leading-normal">
+        Authentische Traditionelle<br /> Thaimassage
+      </h1>
+      <p class="text-center xl:text-left text-xl mt-6 leading-relaxed">
+        Erleb die Kraft der traditionellen Thaimassage – wohltuend, entspannend
+        und revitalisierend. Mit liebevoller Technik und Hingabe bieten wir dir
+        eine Auszeit, die Körper und Geist in Balance bringt.
+      </p>
+
+      <a
+        target="_blank"
+        rel="nofollow"
+        href="https://wa.me/+4915128928966"
+        class="custom-button mt-8"
+        ><Picture
+          src={WHATSAPP}
+          alt="Whatsapp Termin vereinbaren"
+          width={20}
+        /><span class="relative bottom-[2px]">Termin vereinbaren</span></a
+      >
+    </div>
+    <div class="relative xl:w-[55vw]">
+      <Picture
+        class=""
+        src={MASSAGE}
+        alt="Massage"
+        width={786}
+        formats={["webp, avif"]}
+      />
+    </div>
+  </div>
+</section>

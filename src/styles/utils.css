@@ -26,6 +26,15 @@
   src: url('/fonts/sarabun-v15-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/sarabun-v15-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
 /* sarabun-700 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -48,22 +57,19 @@ html {
   font-family: 'Sarabun';
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Pattaya';
-}
+
 
 .custom-button {
-  @apply relative z-10 overflow-hidden flex items-center gap-2 rounded-full bg-woodland text-white px-12 text-xl shadow-xl leading-10;
+  @apply relative z-10 overflow-hidden inline-block rounded-full bg-muted-yellow text-black px-12 text-base font-bold shadow-xl leading-10;
+}
+
+.custom-button picture {
+  @apply inline-block mr-2 relative top-[2px];
 }
 
  .custom-button:before {
-  @apply absolute block bg-black bottom-0 left-0 w-full;
-  transition: all .3s ease;
+  @apply absolute block bg-soft-beige bottom-0 left-0 w-full;
+  transition: all .6s ease;
   z-index: -1;
   content: "";
   height: 0;
@@ -71,6 +77,5 @@ h6 {
  }
 
  .custom-button:hover:before {
-  background-color: red;
   height: 4rem;
  }
