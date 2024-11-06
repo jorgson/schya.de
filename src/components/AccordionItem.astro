@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<style>
+  details {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  summary::marker {
+    display: none;
+  }
+
+  summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+
+  details[open] summary::after {
+    content: "−";
+  }
+</style>
+
+<details>
+  <summary
+    class="text-2xl font-bold list-none cursor-pointer relative bg-soft-beige p-4"
+    >{title}</summary
+  >
+  <div class="text-xl p-4">
+    <slot />
+  </div>
+</details>
