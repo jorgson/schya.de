@@ -36,7 +36,8 @@ const { title } = Astro.props;
     class="text-2xl font-bold list-none cursor-pointer relative bg-soft-beige p-4"
     >{title}</summary
   >
-  <div class="text-xl p-4">
+  <div
+    class="text-xl p-4 prose-p:mb-4 prose-h3:text-2xl prose-h3:text-woodland prose-h3:font-bold">
     <slot />
   </div>
 </details>
