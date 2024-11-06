@@ -165,36 +165,36 @@ import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
   });
 
   const menuToggle = document.getElementById("menu-toggle");
-  const menuIcon = menuToggle.querySelector(".menu-icon");
+  const menuIcon = menuToggle?.querySelector(".menu-icon");
   const mobileMenu = document.getElementById("mobile-menu");
 
-  menuToggle.addEventListener("click", () => {
+  menuToggle?.addEventListener("click", () => {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
 
     // Toggle menu icon animation
-    menuIcon.classList.toggle("active");
+    menuIcon?.classList.toggle("active");
 
     // Toggle mobile menu
-    menuToggle.setAttribute("aria-expanded", !isExpanded);
+    menuToggle.setAttribute("aria-expanded", (!isExpanded).toString());
     if (!isExpanded) {
-      mobileMenu.classList.remove("translate-x-full");
+      mobileMenu?.classList.remove("translate-x-full");
       document.body.classList.add("menu-open");
     } else {
-      mobileMenu.classList.add("translate-x-full");
+      mobileMenu?.classList.add("translate-x-full");
       document.body.classList.remove("menu-open");
     }
   });
 
   // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
+  document.addEventListener("click", (e: any) => {
     if (
-      !menuToggle.contains(e.target) &&
-      !mobileMenu.contains(e.target) &&
-      !mobileMenu.classList.contains("translate-x-full")
+      !menuToggle?.contains(e.target) &&
+      !mobileMenu?.contains(e.target) &&
+      !mobileMenu?.classList.contains("translate-x-full")
     ) {
-      menuIcon.classList.remove("active");
-      mobileMenu.classList.add("translate-x-full");
-      menuToggle.setAttribute("aria-expanded", "false");
+      menuIcon?.classList.remove("active");
+      mobileMenu?.classList.add("translate-x-full");
+      menuToggle?.setAttribute("aria-expanded", "false");
       document.body.classList.remove("menu-open");
     }
   });
@@ -203,11 +203,11 @@ import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
   document.addEventListener("keydown", (e) => {
     if (
       e.key === "Escape" &&
-      !mobileMenu.classList.contains("translate-x-full")
+      !mobileMenu?.classList.contains("translate-x-full")
     ) {
-      menuIcon.classList.remove("active");
-      mobileMenu.classList.add("translate-x-full");
-      menuToggle.setAttribute("aria-expanded", "false");
+      menuIcon?.classList.remove("active");
+      mobileMenu?.classList.add("translate-x-full");
+      menuToggle?.setAttribute("aria-expanded", "false");
       document.body.classList.remove("menu-open");
     }
   });
