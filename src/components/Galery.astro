@@ -1,0 +1,93 @@
+---
+import { Picture } from "astro:assets";
+import IMG1 from "../assets/40.png";
+import IMG2 from "../assets/42.png";
+import IMG3 from "../assets/45.png";
+import IMG4 from "../assets/46.png";
+---
+
+<section class="relative bg-light-green pt-24 pb-24">
+  <svg
+    viewBox="0 0 1440 192"
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute z-10 -top-[40px] sm:-top-[60px] md:-top-[120px] xl:-top-[160px]"
+    data-astro-source-file="/Users/jorgson/schya.de/src/components/WhatWeDo.astro"
+    data-astro-source-loc="139:108">
+    <path
+      fill="#e1f0d6"
+      fill-opacity="1"
+      d="
+    M0,128
+    L48,101.3
+    C96,75,192,21,288,10.7
+    C384,0,480,32,576,53.3
+    C672,75,768,85,864,96
+    C960,107,1056,117,1152,117.3
+    C1248,117,1344,107,1392,101.3
+    L1440,96
+    L1440,192
+    L0,192
+    Z
+  "
+      data-astro-source-file="/Users/jorgson/schya.de/src/components/WhatWeDo.astro"
+      data-astro-source-loc="140:6"
+    ></path>
+  </svg>
+  <div class="container mx-auto px-4 md:px-[4%]">
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      <!-- image - start -->
+      <div
+        class="group relative flex h-48 items-end overflow-hidden rounded-3xl bg-gray-100 shadow-lg md:h-80">
+        <Picture
+          src={IMG1}
+          formats={["webp", "avif"]}
+          class="absolute inset-0 h-full w-full object-cover object-center transition duration-400 group-hover:scale-110"
+          alt={""}
+        />
+
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+        </div>
+      </div>
+      <div
+        class="group relative flex h-48 items-end overflow-hidden rounded-3xl bg-gray-100 shadow-lg md:col-span-2 md:h-80">
+        <Picture
+          src={IMG2}
+          formats={["webp", "avif"]}
+          class="absolute inset-0 h-full w-full object-cover object-center transition duration-400 group-hover:scale-110"
+          alt={""}
+        />
+
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+        </div>
+      </div>
+      <div
+        class="group relative flex h-48 items-end overflow-hidden rounded-3xl bg-gray-100 shadow-lg md:col-span-2 md:h-80">
+        <Picture
+          src={IMG3}
+          formats={["webp", "avif"]}
+          class="absolute inset-0 h-full w-full object-cover object-center transition duration-400 group-hover:scale-110"
+          alt={""}
+        />
+
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+        </div>
+      </div>
+      <div
+        class="group relative flex h-48 items-end overflow-hidden rounded-3xl bg-gray-100 shadow-lg md:h-80">
+        <Picture
+          src={IMG4}
+          formats={["webp", "avif"]}
+          class="absolute inset-0 h-full w-full object-cover object-center transition duration-400 group-hover:scale-110"
+          alt={""}
+        />
+
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
