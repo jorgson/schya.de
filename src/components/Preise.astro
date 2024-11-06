@@ -1,3 +1,84 @@
-<section class="bg-soft-beige h-screen relative">
-  <h2>Preise</h2>
+---
+import Preis from "./Preis.astro";
+---
+
+<section class="bg-soft-beige relative pt-48 pb-96">
+  <div class="container mx-auto px-[4%] text-center">
+    <h2 class="text-4xl font-bold">Preise</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+      <Preis
+        title="Traditionelle Massage"
+        minutes="60"
+        price="54"
+      />
+      <Preis
+        title="Traditionelle Massage"
+        minutes="90"
+        price="74"
+      />
+      <Preis
+        title="Traditionelle Massage"
+        minutes="120"
+        price="98"
+      />
+      <Preis
+        title="Thai Aroma Ölmassage"
+        minutes="60"
+        price="56"
+      />
+      <Preis
+        title="Thai Aroma Ölmassage"
+        minutes="90"
+        price="76"
+      />
+      <Preis
+        title="Thai Aroma Ölmassage"
+        minutes="120"
+        price="102"
+      />
+      <Preis
+        title="Thai Solution Massage"
+        minutes="60"
+        price="69"
+      />
+      <Preis
+        title="Thai Solution Massage"
+        minutes="90"
+        price="95"
+      />
+      <div class="hidden md:flex"></div>
+      <Preis
+        title="Antistress Massage"
+        minutes="90"
+        price="86"
+      />
+      <Preis
+        title="Antistress Massage"
+        minutes="120"
+        price="102"
+      />
+      <div class="hidden md:flex"></div>
+      <Preis
+        title="Rücken-/ Nacken-/ Kopfmassage"
+        minutes="30"
+        price="33"
+      />
+      <Preis
+        title="Rücken-/ Nacken-/ Kopfmassage"
+        minutes="60"
+        price="54"
+      />
+      <div class="hidden md:flex"></div>
+      <Preis
+        title="Thai Fußmassage"
+        minutes="30"
+        price="33"
+      />
+      <Preis
+        title="Thai Fußmassage"
+        minutes="60"
+        price="54"
+      />
+    </div>
+  </div>
 </section>

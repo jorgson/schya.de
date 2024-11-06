@@ -103,4 +103,5 @@ html {
 
 .card:hover picture {
   width: 120%;
+  height: 120%;
 }
