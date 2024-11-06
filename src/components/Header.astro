@@ -5,11 +5,13 @@ import LOGO from "../assets/logo.png";
 import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
 ---
 
-<header class="fixed top-0 z-50 w-full">
+<header
+  id="main-header"
+  class="fixed top-0 z-50 w-full overflow-hidden">
   <div
-    class="relative w-full grid grid-cols-3 mr-auto justify-between items-center h-14 container mx-auto px-4">
+    class="relative w-full max-w-7xl flex lg:grid grid-cols-3 mr-auto justify-between items-center h-14 mx-auto px-4">
     <a
-      class="flex gap-2 leading-none items-center"
+      class="flex w-12 gap-2 leading-none items-center"
       href="/"
       aria-label="zurück zur Startseite">
       <Picture
@@ -20,9 +22,8 @@ import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
         loading={"eager"}
       />
     </a>
-
     <nav
-      class="hidden md:flex mx-auto"
+      class="hidden lg:flex mx-auto"
       role="navigation">
       <ul class="flex gap-4">
         <li class="font-bold text-xl hover:text-woodland transition-colors">
@@ -49,5 +50,165 @@ import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
         /><span class="relative bottom-[2px]">Termin vereinbaren</span></a
       >
     </div>
+    <nav
+      role="navigation"
+      class="lg:hidden ml-auto">
+      <button
+        id="menu-toggle"
+        class="relative w-6 h-6 focus:outline-none"
+        aria-label="Toggle Menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="menu-icon">
+          <line
+            x1="4"
+            x2="20"
+            y1="6"
+            y2="6"
+            class="top-line"
+          ></line>
+          <line
+            x1="4"
+            x2="20"
+            y1="12"
+            y2="12"
+            class="middle-line"
+          ></line>
+          <line
+            x1="4"
+            x2="20"
+            y1="18"
+            y2="18"
+            class="bottom-line"
+          ></line>
+        </svg></button
+      >
+    </nav>
+
+    <div
+      id="mobile-menu"
+      class="fixed top-14 right-0 w-full h-[calc(100vh-3.5rem)] bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+      <nav class="container mx-auto px-4 py-6">
+        <ul class="flex flex-col gap-6">
+          <li class="font-bold text-xl hover:text-woodland transition-colors">
+            <a href="">Massagen</a>
+          </li>
+          <li class="font-bold text-xl hover:text-woodland transition-colors">
+            <a href="">Preise</a>
+          </li>
+          <li class="font-bold text-xl hover:text-woodland transition-colors">
+            <a href="">Gutschein</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
+
+<style>
+  #main-header::before {
+    display: block;
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: -100%;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  #main-header.scroll-active::before {
+    top: 0;
+  }
+
+  .menu-icon line {
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  /* When the parent button has the active class */
+  .menu-icon.active .top-line {
+    transform: translate(0, 6px) rotate(45deg);
+  }
+
+  .menu-icon.active .middle-line {
+    opacity: 0;
+  }
+
+  .menu-icon.active .bottom-line {
+    transform: translate(0, -3px) rotate(-45deg);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  const header = document.getElementById("main-header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header?.classList.add("scroll-active");
+    } else {
+      header?.classList.remove("scroll-active");
+    }
+  });
+
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuIcon = menuToggle.querySelector(".menu-icon");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuToggle.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+
+    // Toggle menu icon animation
+    menuIcon.classList.toggle("active");
+
+    // Toggle mobile menu
+    menuToggle.setAttribute("aria-expanded", !isExpanded);
+    if (!isExpanded) {
+      mobileMenu.classList.remove("translate-x-full");
+      document.body.classList.add("menu-open");
+    } else {
+      mobileMenu.classList.add("translate-x-full");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !menuToggle.contains(e.target) &&
+      !mobileMenu.contains(e.target) &&
+      !mobileMenu.classList.contains("translate-x-full")
+    ) {
+      menuIcon.classList.remove("active");
+      mobileMenu.classList.add("translate-x-full");
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  // Close menu when pressing Escape key
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      !mobileMenu.classList.contains("translate-x-full")
+    ) {
+      menuIcon.classList.remove("active");
+      mobileMenu.classList.add("translate-x-full");
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+  });
+</script>
