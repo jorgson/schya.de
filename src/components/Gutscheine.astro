@@ -1,0 +1,87 @@
+---
+import { Picture } from "astro:assets";
+import IMG from "../assets/36.png";
+import GUTSCHEIN from "../assets/Gutschein.png";
+import Wave from "./Wave.astro";
+---
+
+<section class="bg-lightbg relative pb-60">
+  <svg
+    viewBox="0 0 1440 192"
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute z-10 -top-[40px] sm:-top-[60px] md:-top-[120px] xl:-top-[160px]"
+    data-astro-source-file="/Users/jorgson/schya.de/src/components/WhatWeDo.astro"
+    data-astro-source-loc="16:37">
+    <path
+      fill="#f3f4f6"
+      fill-opacity="1"
+      d="
+    M0,128
+    L48,101.3
+    C96,75,192,21,288,10.7
+    C384,0,480,32,576,53.3
+    C672,75,768,85,864,96
+    C960,107,1056,117,1152,117.3
+    C1248,117,1344,107,1392,101.3
+    L1440,96
+    L1440,192
+    L0,192
+    Z
+  "
+      data-astro-source-file="/Users/jorgson/schya.de/src/components/WhatWeDo.astro"
+      data-astro-source-loc="17:6"
+    ></path>
+  </svg>
+
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12 pt-12">
+      <Picture
+        class="mx-auto mb-4"
+        src={IMG}
+        alt={"Entspannung Gutscheine"}
+        formats={["webp", "avif"]}
+      />
+      Gutscheine
+    </h2>
+    <div class="flex gap-20 items-center justify-center">
+      <div class="flex justify-end w-1/3">
+        <Picture
+          src={GUTSCHEIN}
+          alt="GUTSCHEIN"
+          class="w-full"
+          formats={["webpf", "avif"]}
+        />
+      </div>
+      <div class="w-2/3">
+        <h3 class="text-2xl font-bold mb-4">
+          Verschenken Sie Entspannung: Thaimassage-Gutscheine für Rinchnach und
+          Bodenmais
+        </h3>
+        <Wave className="mb-4 -mt-2" />
+        <p class="text-lg mb-4">
+          Überraschen Sie Ihre Liebsten mit einem besonderen Geschenk: Ein
+          Gutschein für eine traditionelle Thaimassage! Unsere Standorte in
+          Rinchnach und Bodenmais bieten authentische Massagen, die Körper und
+          Geist in Einklang bringen. Mit unserem Gutschein schenken Sie
+          wohltuende Entspannung, ideal für Stressabbau und Regeneration.
+        </p>
+
+        <p class="text-lg mb-4">
+          Unsere Massagen werden von erfahrenen Profis durchgeführt und sind nur
+          wenige Kilometer von Zwiesel und Regen entfernt, sodass sich auch
+          Kunden aus diesen Städten über eine kurze Anfahrt freuen können. Ob
+          für Geburtstage, Jubiläen oder einfach als kleine Auszeit – ein
+          Thaimassage-Gutschein ist immer eine gute Wahl.
+        </p>
+
+        <p class="text-lg mb-4">
+          Gönnen Sie Ihren Freunden und der Familie eine Auszeit vom Alltag in
+          Rinchnach oder Bodenmais und lassen Sie sie die Kraft der
+          traditionellen Thaimassage entdecken. Bestellen Sie jetzt Ihren
+          Gutschein und verschenken Sie ein Erlebnis voller Entspannung und
+          Wohlbefinden!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

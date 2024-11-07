@@ -13,6 +13,7 @@ export default {
         'muted-yellow': '#c9b16b',
         'soft-beige': '#eae1d0',
         'dark-grey': '#2b2b2b',
+        'lightbg': '#f3f4f6',
 
       }
     },
