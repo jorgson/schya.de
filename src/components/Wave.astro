@@ -1,0 +1,24 @@
+---
+interface Props {
+  width?: string;
+  className?: string;
+  stroke?: string;
+}
+
+const { width = "100%", className = "", stroke = "#8B5E3C" } = Astro.props;
+---
+
+<svg
+  width={width}
+  height="30"
+  viewBox="0 0 100 10"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  class={className}>
+  <path
+    d="M0 6 Q 5 2, 10 6 T 20 6 Q 25 10, 30 6 T 40 6 Q 45 2, 50 6 T 60 6 Q 65 10, 70 6 T 80 6 Q 85 2, 90 6 T 100 6"
+    fill="none"
+    stroke={stroke}
+    stroke-width="1.2"
+  ></path>
+</svg>

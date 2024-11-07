@@ -1,10 +1,16 @@
 ---
 import Preis from "./Preis.astro";
+import Wave from "./Wave.astro";
 ---
 
 <section class="bg-soft-beige relative pt-48 pb-32 md:pb-60">
   <div class="container mx-auto px-[4%] text-center">
-    <h2 class="text-4xl font-bold">Preise</h2>
+    <h2 class="text-4xl font-bold">
+      <Wave
+        width="120px"
+        className="mx-auto"
+      />Preise
+    </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
       <Preis
         title="Traditionelle Massage"
