@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import IMG from "../assets/36.png";
 import GUTSCHEIN from "../assets/Gutschein.png";
 import Wave from "./Wave.astro";
+import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
 ---
 
 <section class="bg-lightbg relative pb-60">
@@ -82,6 +83,19 @@ import Wave from "./Wave.astro";
           Gutschein und verschenken Sie ein Erlebnis voller Entspannung und
           Wohlbefinden!
         </p>
+        <div class="ml-auto mt-4 block">
+          <a
+            href="https://wa.me/+4915128928966"
+            class="custom-button"
+            ><Picture
+              src={WHATSAPP}
+              alt="Gutschein bestellen"
+              width={20}
+              loading={"eager"}
+            /><span class="relative bottom-[2px]">Jetzt Gutschein sichern</span
+            ></a
+          >
+        </div>
       </div>
     </div>
   </div>
