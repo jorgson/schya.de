@@ -33,7 +33,7 @@ import Wave from "./Wave.astro";
     ></path>
   </svg>
 
-  <div class="container mx-auto">
+  <div class="container mx-auto px-4 md:px-[4%]">
     <h2 class="text-4xl font-bold text-center mb-12 pt-12">
       <Picture
         class="mx-auto mb-4"
@@ -43,8 +43,9 @@ import Wave from "./Wave.astro";
       />
       Gutscheine
     </h2>
-    <div class="flex gap-20 items-center justify-center">
-      <div class="flex justify-end w-1/3">
+    <div
+      class="flex flex-col-reverse md:flex-row gap-20 items-center justify-center">
+      <div class="flex justify-end md:w-1/3">
         <Picture
           src={GUTSCHEIN}
           alt="GUTSCHEIN"
@@ -52,7 +53,7 @@ import Wave from "./Wave.astro";
           formats={["webpf", "avif"]}
         />
       </div>
-      <div class="w-2/3">
+      <div class="md:w-2/3">
         <h3 class="text-2xl font-bold mb-4">
           Verschenken Sie Entspannung: Thaimassage-Gutscheine für Rinchnach und
           Bodenmais
