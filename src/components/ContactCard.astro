@@ -1,0 +1,60 @@
+---
+import { Picture } from "astro:assets";
+import GUTSCHEIN from "../assets/Gutschein.png";
+import WHATSAPP from "../assets/Digital_Glyph_Green.svg";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  street: string;
+  place: string;
+}
+
+const { title, subtitle, street, place } = Astro.props;
+---
+
+<div class="shadow-xl rounded-3xl bg-white flex flex-col p-10">
+  <div class="">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="82"
+      height="82"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2b6442"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="bg-woodland-light bg-opacity-15 rounded-full p-4"
+      ><path
+        d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z"
+      ></path><path
+        d="M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2"
+      ></path><path d="M18 22v-3"></path><circle
+        cx="10"
+        cy="10"
+        r="3"
+      ></circle></svg
+    >
+  </div>
+  <h3 class="mt-4 text-3xl font-bold">
+    {title}
+    <span class="text-base block">{subtitle}</span>
+  </h3>
+  <p class="mt-4">
+    {street}<br />
+    {place}
+  </p>
+  <div class="mt-4 block">
+    <a
+      href="https://wa.me/+4915128928966"
+      class="custom-button"
+      ><Picture
+        src={WHATSAPP}
+        alt="Gutschein bestellen"
+        width={20}
+        loading={"lazy"}
+      /><span class="relative bottom-[2px]">Termin vereinbaren</span></a
+    >
+  </div>
+</div>

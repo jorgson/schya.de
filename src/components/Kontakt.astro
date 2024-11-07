@@ -1,1 +1,68 @@
-<section></section>
+---
+import ContactCard from "./ContactCard.astro";
+import Wave from "./Wave.astro";
+---
+
+<section class="relative bg-light-green pb-24">
+  <svg
+    viewBox="0 0 1440 192"
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute z-10 -top-[40px] sm:-top-[60px] md:-top-[120px] xl:-top-[160px]"
+    data-astro-source-file="/Users/jorgson/schya.de/src/components/WhatWeDo.astro"
+    data-astro-source-loc="16:37">
+    <path
+      fill="#e1f0d6"
+      fill-opacity="1"
+      d="
+    M0,128
+    L48,101.3
+    C96,75,192,21,288,10.7
+    C384,0,480,32,576,53.3
+    C672,75,768,85,864,96
+    C960,107,1056,117,1152,117.3
+    C1248,117,1344,107,1392,101.3
+    L1440,96
+    L1440,192
+    L0,192
+    Z
+  "
+    ></path>
+  </svg>
+
+  <div class="container mx-auto px-4 md:px-[4%] pb-24">
+    <div
+      class="flex flex-col lg:flex-row pt-24 gap-8 justify-center text-balance">
+      <div>
+        <h3 class="text-right font-bold text-woodland uppercase">Kontakt</h3>
+        <h2 class="text-4xl font-bold text-right uppercase text-balance">
+          Geöffnet in 2 <br /> TOP Locations
+        </h2>
+      </div>
+
+      <div class="text-2xl font-bold leading-normal">
+        Montag - Freitag 9:00 - 13:00 Uhr <br />
+        Termine nur nach Vereinbarung <br />
+        <span class="text-sm"
+          >Termine auch außerhalb der Öffnungszeiten möglich</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 md:px-[4%]">
+    <div class="grid lg:grid-cols-2 gap-24">
+      <ContactCard
+        title="Rinchnach"
+        subtitle="Zwiesel, Regen"
+        street="Guntherstraße 23"
+        place="94269 Rinchnach"
+      />
+      <ContactCard
+        title="Bodenmais"
+        subtitle="mehr erwähnen!"
+        street="Guntherstraße 23"
+        place="94269 Rinchnach"
+      />
+    </div>
+  </div>
+</section>
